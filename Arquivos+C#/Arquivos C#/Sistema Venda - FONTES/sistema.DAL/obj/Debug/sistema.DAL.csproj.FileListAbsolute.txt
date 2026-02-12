@@ -1,0 +1,5 @@
+C:\Sistema Venda\sistema.DAL\bin\Debug\sistema.DAL.dll.config
+C:\Sistema Venda\sistema.DAL\bin\Debug\sistema.DAL.dll
+C:\Sistema Venda\sistema.DAL\bin\Debug\sistema.DAL.pdb
+C:\Sistema Venda\sistema.DAL\obj\Debug\sistema.DAL.dll
+C:\Sistema Venda\sistema.DAL\obj\Debug\sistema.DAL.pdb
