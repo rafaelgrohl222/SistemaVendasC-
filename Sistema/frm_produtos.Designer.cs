@@ -29,7 +29,11 @@ namespace Sistema
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
@@ -42,19 +46,57 @@ namespace Sistema
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CB_categorias = new System.Windows.Forms.ComboBox();
+            this.idprodutosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idprodutosDataGridViewTextBoxColumn,
+            this.descprodutoDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
+            this.idcategoriaDataGridViewTextBoxColumn,
+            this.categoriaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.produtoBindingSource;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.Location = new System.Drawing.Point(13, 98);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(589, 196);
             this.dataGridView1.TabIndex = 17;
+            // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataSource = typeof(sistema_DAL.Produto);
             // 
             // btn_cancelar
             // 
@@ -98,6 +140,7 @@ namespace Sistema
             // 
             // txt_desc_produto
             // 
+            this.txt_desc_produto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "desc_produto", true));
             this.txt_desc_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_desc_produto.Location = new System.Drawing.Point(93, 40);
             this.txt_desc_produto.Name = "txt_desc_produto";
@@ -116,6 +159,7 @@ namespace Sistema
             // 
             // txt_cod_produto
             // 
+            this.txt_cod_produto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "id_produtos", true));
             this.txt_cod_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cod_produto.Location = new System.Drawing.Point(93, 9);
             this.txt_cod_produto.Name = "txt_cod_produto";
@@ -134,6 +178,7 @@ namespace Sistema
             // 
             // txt_valor
             // 
+            this.txt_valor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "valor", true));
             this.txt_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_valor.Location = new System.Drawing.Point(255, 40);
             this.txt_valor.Name = "txt_valor";
@@ -162,12 +207,58 @@ namespace Sistema
             // 
             // CB_categorias
             // 
+            this.CB_categorias.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.produtoBindingSource, "id_categoria", true));
+            this.CB_categorias.DataSource = this.categoriaBindingSource;
+            this.CB_categorias.DisplayMember = "desc_categoria";
             this.CB_categorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_categorias.FormattingEnabled = true;
             this.CB_categorias.Location = new System.Drawing.Point(465, 40);
             this.CB_categorias.Name = "CB_categorias";
             this.CB_categorias.Size = new System.Drawing.Size(121, 24);
             this.CB_categorias.TabIndex = 21;
+            this.CB_categorias.ValueMember = "id_categoria";
+            // 
+            // idprodutosDataGridViewTextBoxColumn
+            // 
+            this.idprodutosDataGridViewTextBoxColumn.DataPropertyName = "id_produtos";
+            this.idprodutosDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idprodutosDataGridViewTextBoxColumn.Name = "idprodutosDataGridViewTextBoxColumn";
+            this.idprodutosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idprodutosDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // descprodutoDataGridViewTextBoxColumn
+            // 
+            this.descprodutoDataGridViewTextBoxColumn.DataPropertyName = "desc_produto";
+            this.descprodutoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descprodutoDataGridViewTextBoxColumn.Name = "descprodutoDataGridViewTextBoxColumn";
+            this.descprodutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descprodutoDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idcategoriaDataGridViewTextBoxColumn
+            // 
+            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "Código da Categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
+            this.idcategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoriaDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(sistema_DAL.Categoria);
             // 
             // frm_produtos
             // 
@@ -191,7 +282,10 @@ namespace Sistema
             this.Name = "frm_produtos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Produtos";
+            this.Load += new System.EventHandler(this.frm_produtos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +306,12 @@ namespace Sistema
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CB_categorias;
+        private System.Windows.Forms.BindingSource produtoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idprodutosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
     }
 }

@@ -43,7 +43,7 @@ namespace Sistema
             this.btn_cad_categorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cad_categorias.FlatAppearance.BorderSize = 10;
             this.btn_cad_categorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_categorias.Location = new System.Drawing.Point(12, 67);
+            this.btn_cad_categorias.Location = new System.Drawing.Point(24, 47);
             this.btn_cad_categorias.Name = "btn_cad_categorias";
             this.btn_cad_categorias.Size = new System.Drawing.Size(88, 61);
             this.btn_cad_categorias.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace Sistema
             // 
             this.btn_cad_produtos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cad_produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_produtos.Location = new System.Drawing.Point(106, 67);
+            this.btn_cad_produtos.Location = new System.Drawing.Point(118, 47);
             this.btn_cad_produtos.Name = "btn_cad_produtos";
             this.btn_cad_produtos.Size = new System.Drawing.Size(88, 61);
             this.btn_cad_produtos.TabIndex = 1;
@@ -87,7 +87,7 @@ namespace Sistema
             // 
             this.categoriasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
@@ -95,7 +95,7 @@ namespace Sistema
             // 
             this.produtosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 

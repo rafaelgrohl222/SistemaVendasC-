@@ -14,3 +14,19 @@ D:\CCharp_Projetos\Sistema Vendas\Sistema\bin\Debug\sistema_DAL.dll
 D:\CCharp_Projetos\Sistema Vendas\Sistema\bin\Debug\sistema_DAL.pdb
 D:\CCharp_Projetos\Sistema Vendas\Sistema\bin\Debug\sistema_DAL.dll.config
 D:\CCharp_Projetos\Sistema Vendas\Sistema\obj\Debug\Sistema.csproj.CopyComplete
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\Sistema.exe.config
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\Sistema.exe
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\Sistema.pdb
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\sistema_DAL.dll
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\sistema_DAL.pdb
+D:\CCharp_Projetos\SistemaVendas\Sistema\bin\Debug\sistema_DAL.dll.config
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.AssemblyReference.cache
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.frm_categorias.resources
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.frm_menuPrincipal.resources
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.frm_produtos.resources
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.Properties.Resources.resources
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.GenerateResource.cache
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.CoreCompileInputs.cache
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.CopyComplete
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.exe
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.pdb

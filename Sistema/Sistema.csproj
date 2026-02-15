@@ -87,6 +87,7 @@
     </Compile>
     <None Include="Properties\DataSources\sistema_DAL.Categoria.datasource" />
     <None Include="Properties\DataSources\sistema_DAL.Categorias.datasource" />
+    <None Include="Properties\DataSources\sistema_DAL.Produto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
