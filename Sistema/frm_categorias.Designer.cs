@@ -43,6 +43,7 @@ namespace Sistema
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desccategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Sair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +93,7 @@ namespace Sistema
             // btn_novo
             // 
             this.btn_novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_novo.Location = new System.Drawing.Point(70, 54);
+            this.btn_novo.Location = new System.Drawing.Point(13, 54);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(75, 23);
             this.btn_novo.TabIndex = 4;
@@ -103,7 +104,7 @@ namespace Sistema
             // btn_cadastrar
             // 
             this.btn_cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar.Location = new System.Drawing.Point(204, 54);
+            this.btn_cadastrar.Location = new System.Drawing.Point(128, 54);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(124, 23);
             this.btn_cadastrar.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace Sistema
             // btn_excluir
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excluir.Location = new System.Drawing.Point(392, 54);
+            this.btn_excluir.Location = new System.Drawing.Point(297, 54);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 23);
             this.btn_excluir.TabIndex = 6;
@@ -125,7 +126,7 @@ namespace Sistema
             // btn_cancelar
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Location = new System.Drawing.Point(527, 54);
+            this.btn_cancelar.Location = new System.Drawing.Point(419, 54);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelar.TabIndex = 7;
@@ -169,11 +170,23 @@ namespace Sistema
             this.desccategoriaDataGridViewTextBoxColumn.ReadOnly = true;
             this.desccategoriaDataGridViewTextBoxColumn.Width = 444;
             // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(527, 54);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sair.TabIndex = 23;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
             // frm_categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(614, 306);
+            this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_excluir);
@@ -208,5 +221,6 @@ namespace Sistema
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn desccategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_Sair;
     }
 }

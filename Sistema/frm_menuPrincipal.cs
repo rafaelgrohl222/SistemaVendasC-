@@ -40,5 +40,29 @@ namespace Sistema
             frm_produtos frm = new frm_produtos();
             frm.Show();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário Menu
+            this.Close();
+        }
+
+        private void produtosCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_consultaProdutos frm = new frm_consultaProdutos();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_consultaProdutos frm = new frm_consultaProdutos();
+            frm.Show();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário atual
+            this.Close();
+        }
     }
 }

@@ -35,6 +35,11 @@ namespace Sistema
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_sair = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +48,7 @@ namespace Sistema
             this.btn_cad_categorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cad_categorias.FlatAppearance.BorderSize = 10;
             this.btn_cad_categorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_categorias.Location = new System.Drawing.Point(24, 47);
+            this.btn_cad_categorias.Location = new System.Drawing.Point(21, 47);
             this.btn_cad_categorias.Name = "btn_cad_categorias";
             this.btn_cad_categorias.Size = new System.Drawing.Size(88, 61);
             this.btn_cad_categorias.TabIndex = 0;
@@ -55,7 +60,7 @@ namespace Sistema
             // 
             this.btn_cad_produtos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cad_produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_produtos.Location = new System.Drawing.Point(118, 47);
+            this.btn_cad_produtos.Location = new System.Drawing.Point(115, 47);
             this.btn_cad_produtos.Name = "btn_cad_produtos";
             this.btn_cad_produtos.Size = new System.Drawing.Size(88, 61);
             this.btn_cad_produtos.TabIndex = 1;
@@ -67,7 +72,9 @@ namespace Sistema
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem});
+            this.cadastrarToolStripMenuItem,
+            this.consultasToolStripMenuItem,
+            this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(614, 24);
@@ -99,11 +106,60 @@ namespace Sistema
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.produtosCategoriasToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // produtosCategoriasToolStripMenuItem
+            // 
+            this.produtosCategoriasToolStripMenuItem.Name = "produtosCategoriasToolStripMenuItem";
+            this.produtosCategoriasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.produtosCategoriasToolStripMenuItem.Text = "Produtos / Categorias";
+            this.produtosCategoriasToolStripMenuItem.Click += new System.EventHandler(this.produtosCategoriasToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(209, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 61);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Consultas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_sair
+            // 
+            this.btn_sair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sair.Location = new System.Drawing.Point(516, 237);
+            this.btn_sair.Name = "btn_sair";
+            this.btn_sair.Size = new System.Drawing.Size(88, 61);
+            this.btn_sair.TabIndex = 4;
+            this.btn_sair.Text = "Sair";
+            this.btn_sair.UseVisualStyleBackColor = true;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            // 
             // frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(614, 306);
+            this.Controls.Add(this.btn_sair);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_cad_produtos);
             this.Controls.Add(this.btn_cad_categorias);
             this.Controls.Add(this.menuStrip1);
@@ -126,6 +182,11 @@ namespace Sistema
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtosCategoriasToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_sair;
     }
 }
 

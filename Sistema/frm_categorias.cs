@@ -29,7 +29,7 @@ namespace Sistema
             this.categoriaBindingSource.AddNew();
         }
 
-        //Botão Cadastrar
+        //Botão Cadastrar Categoria
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             //Teste se o campo está vazio
@@ -94,6 +94,12 @@ namespace Sistema
             if (produtos.Count() > 0) { return true; }
 
             else { return false; }
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário atual
+            this.Close();
         }
     }
 }

@@ -30,3 +30,4 @@ D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.CoreCompileInp
 D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.csproj.CopyComplete
 D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.exe
 D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.pdb
+D:\CCharp_Projetos\SistemaVendas\Sistema\obj\Debug\Sistema.frm_consultaProdutos.resources

@@ -53,6 +53,12 @@
     <Compile Include="frm_categorias.Designer.cs">
       <DependentUpon>frm_categorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_consultaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_consultaProdutos.Designer.cs">
+      <DependentUpon>frm_consultaProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_menuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_categorias.resx">
       <DependentUpon>frm_categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_consultaProdutos.resx">
+      <DependentUpon>frm_consultaProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menuPrincipal.resx">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
