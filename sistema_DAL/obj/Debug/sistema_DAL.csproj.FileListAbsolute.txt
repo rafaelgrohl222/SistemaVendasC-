@@ -5,3 +5,10 @@ D:\CCharp_Projetos\Sistema Vendas\sistema_DAL\obj\Debug\sistema_DAL.csproj.Assem
 D:\CCharp_Projetos\Sistema Vendas\sistema_DAL\obj\Debug\sistema_DAL.csproj.CoreCompileInputs.cache
 D:\CCharp_Projetos\Sistema Vendas\sistema_DAL\obj\Debug\sistema_DAL.dll
 D:\CCharp_Projetos\Sistema Vendas\sistema_DAL\obj\Debug\sistema_DAL.pdb
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\bin\Debug\sistema_DAL.dll.config
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\bin\Debug\sistema_DAL.dll
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\bin\Debug\sistema_DAL.pdb
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\obj\Debug\sistema_DAL.csproj.AssemblyReference.cache
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\obj\Debug\sistema_DAL.csproj.CoreCompileInputs.cache
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\obj\Debug\sistema_DAL.dll
+D:\CCharp_Projetos\SistemaVendas\sistema_DAL\obj\Debug\sistema_DAL.pdb

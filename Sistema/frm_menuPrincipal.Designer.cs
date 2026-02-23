@@ -39,7 +39,7 @@ namespace Sistema
             this.produtosCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_sair = new System.Windows.Forms.Button();
+            this.btn_fechar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,17 +140,17 @@ namespace Sistema
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btn_sair
+            // btn_fechar
             // 
-            this.btn_sair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sair.Location = new System.Drawing.Point(516, 237);
-            this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(88, 61);
-            this.btn_sair.TabIndex = 4;
-            this.btn_sair.Text = "Sair";
-            this.btn_sair.UseVisualStyleBackColor = true;
-            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            this.btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_fechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fechar.Location = new System.Drawing.Point(516, 237);
+            this.btn_fechar.Name = "btn_fechar";
+            this.btn_fechar.Size = new System.Drawing.Size(88, 61);
+            this.btn_fechar.TabIndex = 4;
+            this.btn_fechar.Text = "Fechar";
+            this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
             // frm_menuPrincipal
             // 
@@ -158,7 +158,7 @@ namespace Sistema
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(614, 306);
-            this.Controls.Add(this.btn_sair);
+            this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_cad_produtos);
             this.Controls.Add(this.btn_cad_categorias);
@@ -186,7 +186,7 @@ namespace Sistema
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosCategoriasToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_sair;
+        private System.Windows.Forms.Button btn_fechar;
     }
 }
 

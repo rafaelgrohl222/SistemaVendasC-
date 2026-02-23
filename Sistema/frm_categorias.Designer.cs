@@ -33,7 +33,6 @@ namespace Sistema
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_cod_categoria = new System.Windows.Forms.TextBox();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txt_categoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_novo = new System.Windows.Forms.Button();
@@ -41,11 +40,12 @@ namespace Sistema
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_fechar = new System.Windows.Forms.Button();
             this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desccategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Sair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,10 +66,6 @@ namespace Sistema
             this.txt_cod_categoria.Name = "txt_cod_categoria";
             this.txt_cod_categoria.Size = new System.Drawing.Size(100, 22);
             this.txt_cod_categoria.TabIndex = 1;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataSource = typeof(sistema_DAL.Categoria);
             // 
             // txt_categoria
             // 
@@ -155,6 +151,16 @@ namespace Sistema
             this.dataGridView1.Size = new System.Drawing.Size(589, 196);
             this.dataGridView1.TabIndex = 8;
             // 
+            // btn_fechar
+            // 
+            this.btn_fechar.Location = new System.Drawing.Point(527, 54);
+            this.btn_fechar.Name = "btn_fechar";
+            this.btn_fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_fechar.TabIndex = 23;
+            this.btn_fechar.Text = "Fechar";
+            this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
+            // 
             // idcategoriaDataGridViewTextBoxColumn
             // 
             this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
@@ -170,15 +176,9 @@ namespace Sistema
             this.desccategoriaDataGridViewTextBoxColumn.ReadOnly = true;
             this.desccategoriaDataGridViewTextBoxColumn.Width = 444;
             // 
-            // btn_Sair
+            // categoriaBindingSource
             // 
-            this.btn_Sair.Location = new System.Drawing.Point(527, 54);
-            this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(75, 23);
-            this.btn_Sair.TabIndex = 23;
-            this.btn_Sair.Text = "Sair";
-            this.btn_Sair.UseVisualStyleBackColor = true;
-            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            this.categoriaBindingSource.DataSource = typeof(sistema_DAL.Categoria);
             // 
             // frm_categorias
             // 
@@ -186,7 +186,7 @@ namespace Sistema
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(614, 306);
-            this.Controls.Add(this.btn_Sair);
+            this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_excluir);
@@ -200,8 +200,8 @@ namespace Sistema
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Categorias";
             this.Load += new System.EventHandler(this.frm_categorias_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +221,6 @@ namespace Sistema
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn desccategoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.Button btn_fechar;
     }
 }

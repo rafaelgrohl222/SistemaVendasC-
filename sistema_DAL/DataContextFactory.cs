@@ -15,7 +15,7 @@ namespace sistema_DAL
             {
                 if (dataContext == null)//Verficar exite conexão
                     dataContext = new sistemaDataContext();//Criar nova conexão
-                return dataContext;
+                return dataContext; //retorna a conexão
             }
         }
     }

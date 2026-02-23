@@ -29,11 +29,10 @@ namespace Sistema
             this.categoriaBindingSource.AddNew();
         }
 
-        //Botão Cadastrar Categoria
+        //Botão Cadastrar/Atualizar Categoria
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            //Teste se o campo está vazio
-            if(this.valida()) 
+            if(this.valida())//Testar se o campo está vazio
             {
                 this.categoriaBindingSource.EndEdit();//Sair modo edição
                 DataContextFactory.DataContext.SubmitChanges(); //Inserir e alterar na BD
@@ -46,7 +45,7 @@ namespace Sistema
             //.Trim: Retira espaço vazio, string.Empty=vazio ou ""
             if (txt_categoria.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Campo é categoria OBRIGATÓRIO");
+                MessageBox.Show("Campo categoria é OBRIGATÓRIO");
                 txt_categoria.Focus();
                 return false;
             }
@@ -57,7 +56,7 @@ namespace Sistema
         private void btn_excluir_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Tem certeza", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
+            {//Verifica se a categoria tem produto vinculada
                 if(this.CategoriaPossuiProduto(this.categoriaAtual))
                 { 
                     MessageBox.Show("Não pode excluir a categoria, existe produtos vinculadas!");
@@ -77,7 +76,14 @@ namespace Sistema
             this.categoriaBindingSource.CancelEdit();
         }
 
-        //Método Evitar de excluir categoria se estiver atrelada a outro item
+        //Botão Fechar Form Categoria
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário atual
+            this.Close();
+        }
+
+        //Método - Evitar excluir categoria se estiver vinculada a outros itens
         public Categoria categoriaAtual
         {
             get
@@ -87,19 +93,13 @@ namespace Sistema
             }
         }
 
-        //Método Categoria possui produto
+        //Método - Categoria possui produto
         private bool CategoriaPossuiProduto(Categoria categoria)
         {
             var produtos = DataContextFactory.DataContext.Produto.Where(x => x.id_categoria == categoria.id_categoria);
             if (produtos.Count() > 0) { return true; }
 
             else { return false; }
-        }
-
-        private void btn_Sair_Click(object sender, EventArgs e)
-        {
-            // Fecha o formulário atual
-            this.Close();
         }
     }
 }

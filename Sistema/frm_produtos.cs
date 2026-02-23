@@ -30,11 +30,10 @@ namespace Sistema
             this.produtoBindingSource.AddNew();
         }
 
-        //Botão Cadastrar Produto
+        //Botão Cadastrar/Atualizar Produto
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            //Teste se o campo está vazio
-            if (this.valida())
+            if (this.valida())//Teste se o campo está vazio
             {
                 this.produtoBindingSource.EndEdit();//Sair modo edição
                 DataContextFactory.DataContext.SubmitChanges(); //Inserir e alterar na BD
@@ -43,7 +42,7 @@ namespace Sistema
             }
         }
 
-        //Validação Botão Cadastrar
+        //Validação Botão Cadastrar / Atualizar
         private bool valida()
         {
             //.Trim: Retira espaço vazio, string.Empty=vazio ou ""
@@ -56,6 +55,7 @@ namespace Sistema
             return true;
         }
 
+        //Botão Excluir
         private void btn_excluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Tem certeza", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -66,6 +66,7 @@ namespace Sistema
             }
         }
 
+        //Botão Cancelar
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.produtoBindingSource.CancelEdit();
@@ -80,10 +81,10 @@ namespace Sistema
             }
         }
 
-        private void btn_sair_Click(object sender, EventArgs e)
+        //Botão Fechar Form Produto
+        private void btn_fechar_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+            this.Close();// Fecha o formulário atual
         }
     }
 }

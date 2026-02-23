@@ -59,7 +59,7 @@ namespace Sistema
             frm.Show();
         }
 
-        private void btn_sair_Click(object sender, EventArgs e)
+        private void btn_fechar_Click(object sender, EventArgs e)
         {
             // Fecha o formulário atual
             this.Close();
