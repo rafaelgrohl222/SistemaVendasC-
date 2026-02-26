@@ -30,7 +30,8 @@ namespace Sistema
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtoDataGridView = new System.Windows.Forms.DataGridView();
             this.btn_buscar = new System.Windows.Forms.Button();
@@ -65,6 +66,7 @@ namespace Sistema
             this.produtoDataGridView.Location = new System.Drawing.Point(0, 84);
             this.produtoDataGridView.Name = "produtoDataGridView";
             this.produtoDataGridView.ReadOnly = true;
+            this.produtoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.produtoDataGridView.Size = new System.Drawing.Size(613, 220);
             this.produtoDataGridView.TabIndex = 1;
             // 
@@ -77,6 +79,7 @@ namespace Sistema
             this.btn_buscar.TabIndex = 2;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label1
             // 
@@ -98,7 +101,7 @@ namespace Sistema
             this.CB_categoria.Name = "CB_categoria";
             this.CB_categoria.Size = new System.Drawing.Size(297, 24);
             this.CB_categoria.TabIndex = 4;
-            this.CB_categoria.ValueMember = "desc_categoria";
+            this.CB_categoria.ValueMember = "id_categoria";
             // 
             // categoriaBindingSource
             // 
@@ -117,6 +120,8 @@ namespace Sistema
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_produtos";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -132,9 +137,9 @@ namespace Sistema
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "valor";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn3.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;

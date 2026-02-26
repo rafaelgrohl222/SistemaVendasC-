@@ -20,13 +20,23 @@ namespace Sistema
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+            this.Close();// Fecha o formulário atual
         }
 
         private void frm_consultaProdutos_Load(object sender, EventArgs e)
         {
-            this.categoriaBindingSource.DataSource = DataContextFactory.DataContext.Categoria;
+           this.categoriaBindingSource.DataSource = DataContextFactory.DataContext.Categoria;
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            this.Pesquisar((int)CB_categoria.SelectedValue);
+        }
+
+        //Método - Buscar (void Solicita retorono)
+        public void Pesquisar(int codigoCategoria) 
+        {//DataSource = BD, verificando se id_categoria recebe o mesmo codigo, trazer esses produtos
+            this.produtoBindingSource.DataSource = DataContextFactory.DataContext.Produto.Where(x => x.id_categoria == codigoCategoria);
         }
     }
 }
