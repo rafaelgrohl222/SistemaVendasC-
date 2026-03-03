@@ -28,6 +28,7 @@ namespace Sistema
            this.categoriaBindingSource.DataSource = DataContextFactory.DataContext.Categoria;
         }
 
+        //Botão Buscar
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             this.Pesquisar((int)CB_categoria.SelectedValue);

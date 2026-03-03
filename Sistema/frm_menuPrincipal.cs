@@ -43,8 +43,7 @@ namespace Sistema
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário Menu
-            this.Close();
+            this.Close();// Fecha o formulário Menu
         }
 
         private void produtosCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,13 +55,18 @@ namespace Sistema
         private void button1_Click(object sender, EventArgs e)
         {
             frm_consultaProdutos frm = new frm_consultaProdutos();
-            frm.Show();
+            frm.Show();//Abrir o form Consulta Produtos
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+            this.Close();// Fecha o formulário atual
+        }
+
+        private void vendasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_venda frm = new frm_venda();
+            frm.Show();//Abrir o form Vendas
         }
     }
 }

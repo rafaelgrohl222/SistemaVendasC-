@@ -40,6 +40,8 @@ namespace Sistema
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +76,7 @@ namespace Sistema
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem,
             this.consultasToolStripMenuItem,
+            this.vendasToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -152,6 +155,21 @@ namespace Sistema
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vendasToolStripMenuItem1});
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            // 
+            // vendasToolStripMenuItem1
+            // 
+            this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem1.Text = "Vendas";
+            this.vendasToolStripMenuItem1.Click += new System.EventHandler(this.vendasToolStripMenuItem1_Click);
+            // 
             // frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +205,8 @@ namespace Sistema
         private System.Windows.Forms.ToolStripMenuItem produtosCategoriasToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_fechar;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
     }
 }
 

@@ -13,7 +13,7 @@ namespace sistema_DAL
         {
             get
             {
-                if (dataContext == null)//Verficar exite conexão
+                if (dataContext == null)//Verficar exite conexão ou está conectado
                     dataContext = new sistemaDataContext();//Criar nova conexão
                 return dataContext; //retorna a conexão
             }
