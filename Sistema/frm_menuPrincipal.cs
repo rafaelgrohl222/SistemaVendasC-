@@ -52,7 +52,7 @@ namespace Sistema
             frm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_consProduto(object sender, EventArgs e)
         {
             frm_consultaProdutos frm = new frm_consultaProdutos();
             frm.Show();//Abrir o form Consulta Produtos
@@ -67,6 +67,12 @@ namespace Sistema
         {
             frm_venda frm = new frm_venda();
             frm.Show();//Abrir o form Vendas
+        }
+
+        private void btn_vendas_Click(object sender, EventArgs e)
+        {
+            frm_venda frm = new frm_venda();
+            frm.Show();//Abrir o form Consulta Produtos
         }
     }
 }

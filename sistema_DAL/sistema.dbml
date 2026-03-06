@@ -34,14 +34,21 @@
       <Column Name="valor_pago" Member="ValorPago" Storage="_valor_pago" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="id_pessoa" Member="CodigoPessoa" Storage="_id_pessoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Venda_ItensVenda" Member="ItensVenda" Storage="_tb_itens_venda" ThisKey="CodigoVenda" OtherKey="CodigoVenda" Type="ItensVenda" />
-      <Association Name="tb_pessoas_Venda" Member="Pessoas" ThisKey="CodigoPessoa" OtherKey="Codigo" Type="Pessoas" IsForeignKey="true" />
+      <Association Name="Pessoas_Venda" Member="Pessoas" ThisKey="CodigoPessoa" OtherKey="Codigo" Type="Pessoas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_pessoas" Member="Pessoas">
     <Type Name="Pessoas">
       <Column Name="id_pessoa" Member="Codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="desc_pessoa" Member="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="tb_pessoas_Venda" Member="Venda" ThisKey="Codigo" OtherKey="CodigoPessoa" Type="Venda" />
+      <Association Name="Pessoas_Venda" Member="Venda" ThisKey="Codigo" OtherKey="CodigoPessoa" Type="Venda" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_usuario" Member="Usuarios">
+    <Type Name="Usuarios">
+      <Column Name="usuario" Member="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="senha" Member="Senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_pessoa" Member="CodigoPessoa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

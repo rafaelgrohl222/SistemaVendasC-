@@ -105,7 +105,11 @@
     </Compile>
     <None Include="Properties\DataSources\sistema_DAL.Categoria.datasource" />
     <None Include="Properties\DataSources\sistema_DAL.Categorias.datasource" />
+    <None Include="Properties\DataSources\sistema_DAL.ItensVenda.datasource" />
+    <None Include="Properties\DataSources\sistema_DAL.Pessoas.datasource" />
     <None Include="Properties\DataSources\sistema_DAL.Produto.datasource" />
+    <None Include="Properties\DataSources\sistema_DAL.Usuarios.datasource" />
+    <None Include="Properties\DataSources\sistema_DAL.Venda.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
