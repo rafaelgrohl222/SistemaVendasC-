@@ -32,36 +32,38 @@ namespace Sistema
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label codigoPessoaLabel;
             System.Windows.Forms.Label codigoVendaLabel;
-            System.Windows.Forms.Label codigoProdutoLabel;
             System.Windows.Forms.Label quantidadeLabel;
             System.Windows.Forms.Label valorLabel;
+            System.Windows.Forms.Label codigoProdutoLabel;
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CB_cliente = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.codigoVendaTextBox = new System.Windows.Forms.TextBox();
-            this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codigoProdutoTextBox = new System.Windows.Forms.TextBox();
-            this.quantidadeTextBox = new System.Windows.Forms.TextBox();
-            this.valorTextBox = new System.Windows.Forms.TextBox();
             this.itensVendaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.quantidadeTextBox = new System.Windows.Forms.TextBox();
+            this.codigoVendaTextBox = new System.Windows.Forms.TextBox();
+            this.btn_sair = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProdutoComboBox = new System.Windows.Forms.ComboBox();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             codigoPessoaLabel = new System.Windows.Forms.Label();
             codigoVendaLabel = new System.Windows.Forms.Label();
-            codigoProdutoLabel = new System.Windows.Forms.Label();
             quantidadeLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
+            codigoProdutoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoPessoaLabel
@@ -73,6 +75,36 @@ namespace Sistema
             codigoPessoaLabel.Size = new System.Drawing.Size(52, 16);
             codigoPessoaLabel.TabIndex = 1;
             codigoPessoaLabel.Text = "Cliente:";
+            // 
+            // codigoVendaLabel
+            // 
+            codigoVendaLabel.AutoSize = true;
+            codigoVendaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codigoVendaLabel.Location = new System.Drawing.Point(14, 22);
+            codigoVendaLabel.Name = "codigoVendaLabel";
+            codigoVendaLabel.Size = new System.Drawing.Size(98, 16);
+            codigoVendaLabel.TabIndex = 0;
+            codigoVendaLabel.Text = "Codigo Venda:";
+            // 
+            // quantidadeLabel
+            // 
+            quantidadeLabel.AutoSize = true;
+            quantidadeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            quantidadeLabel.Location = new System.Drawing.Point(259, 22);
+            quantidadeLabel.Name = "quantidadeLabel";
+            quantidadeLabel.Size = new System.Drawing.Size(81, 16);
+            quantidadeLabel.TabIndex = 4;
+            quantidadeLabel.Text = "Quantidade:";
+            // 
+            // valorLabel
+            // 
+            valorLabel.AutoSize = true;
+            valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            valorLabel.Location = new System.Drawing.Point(259, 57);
+            valorLabel.Name = "valorLabel";
+            valorLabel.Size = new System.Drawing.Size(43, 16);
+            valorLabel.TabIndex = 6;
+            valorLabel.Text = "Valor:";
             // 
             // vendaBindingSource
             // 
@@ -92,6 +124,10 @@ namespace Sistema
             this.CB_cliente.TabIndex = 2;
             this.CB_cliente.ValueMember = "Codigo";
             // 
+            // pessoasBindingSource
+            // 
+            this.pessoasBindingSource.DataSource = typeof(sistema_DAL.Pessoas);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,98 +138,43 @@ namespace Sistema
             this.button1.Text = "Nova Venda";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // pessoasBindingSource
-            // 
-            this.pessoasBindingSource.DataSource = typeof(sistema_DAL.Pessoas);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(codigoProdutoLabel);
+            this.groupBox1.Controls.Add(this.codigoProdutoComboBox);
             this.groupBox1.Controls.Add(this.itensVendaDataGridView);
             this.groupBox1.Controls.Add(valorLabel);
             this.groupBox1.Controls.Add(this.valorTextBox);
             this.groupBox1.Controls.Add(quantidadeLabel);
             this.groupBox1.Controls.Add(this.quantidadeTextBox);
-            this.groupBox1.Controls.Add(codigoProdutoLabel);
-            this.groupBox1.Controls.Add(this.codigoProdutoTextBox);
             this.groupBox1.Controls.Add(codigoVendaLabel);
             this.groupBox1.Controls.Add(this.codigoVendaTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(1, 88);
+            this.groupBox1.Location = new System.Drawing.Point(1, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(611, 348);
+            this.groupBox1.Size = new System.Drawing.Size(620, 378);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nova Venda";
             // 
-            // codigoVendaLabel
+            // itensVendaDataGridView
             // 
-            codigoVendaLabel.AutoSize = true;
-            codigoVendaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codigoVendaLabel.Location = new System.Drawing.Point(14, 22);
-            codigoVendaLabel.Name = "codigoVendaLabel";
-            codigoVendaLabel.Size = new System.Drawing.Size(98, 16);
-            codigoVendaLabel.TabIndex = 0;
-            codigoVendaLabel.Text = "Codigo Venda:";
-            // 
-            // codigoVendaTextBox
-            // 
-            this.codigoVendaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CodigoVenda", true));
-            this.codigoVendaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoVendaTextBox.Location = new System.Drawing.Point(125, 19);
-            this.codigoVendaTextBox.Name = "codigoVendaTextBox";
-            this.codigoVendaTextBox.Size = new System.Drawing.Size(100, 22);
-            this.codigoVendaTextBox.TabIndex = 1;
+            this.itensVendaDataGridView.AutoGenerateColumns = false;
+            this.itensVendaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itensVendaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn4,
+            this.Column1});
+            this.itensVendaDataGridView.DataSource = this.itensVendaBindingSource;
+            this.itensVendaDataGridView.Location = new System.Drawing.Point(11, 95);
+            this.itensVendaDataGridView.Name = "itensVendaDataGridView";
+            this.itensVendaDataGridView.Size = new System.Drawing.Size(598, 220);
+            this.itensVendaDataGridView.TabIndex = 8;
             // 
             // itensVendaBindingSource
             // 
             this.itensVendaBindingSource.DataSource = typeof(sistema_DAL.ItensVenda);
-            // 
-            // codigoProdutoLabel
-            // 
-            codigoProdutoLabel.AutoSize = true;
-            codigoProdutoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codigoProdutoLabel.Location = new System.Drawing.Point(14, 54);
-            codigoProdutoLabel.Name = "codigoProdutoLabel";
-            codigoProdutoLabel.Size = new System.Drawing.Size(105, 16);
-            codigoProdutoLabel.TabIndex = 2;
-            codigoProdutoLabel.Text = "Codigo Produto:";
-            // 
-            // codigoProdutoTextBox
-            // 
-            this.codigoProdutoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensVendaBindingSource, "CodigoProduto", true));
-            this.codigoProdutoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoProdutoTextBox.Location = new System.Drawing.Point(125, 54);
-            this.codigoProdutoTextBox.Name = "codigoProdutoTextBox";
-            this.codigoProdutoTextBox.Size = new System.Drawing.Size(100, 22);
-            this.codigoProdutoTextBox.TabIndex = 3;
-            // 
-            // quantidadeLabel
-            // 
-            quantidadeLabel.AutoSize = true;
-            quantidadeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            quantidadeLabel.Location = new System.Drawing.Point(259, 22);
-            quantidadeLabel.Name = "quantidadeLabel";
-            quantidadeLabel.Size = new System.Drawing.Size(81, 16);
-            quantidadeLabel.TabIndex = 4;
-            quantidadeLabel.Text = "Quantidade:";
-            // 
-            // quantidadeTextBox
-            // 
-            this.quantidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensVendaBindingSource, "Quantidade", true));
-            this.quantidadeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeTextBox.Location = new System.Drawing.Point(356, 19);
-            this.quantidadeTextBox.Name = "quantidadeTextBox";
-            this.quantidadeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.quantidadeTextBox.TabIndex = 5;
-            // 
-            // valorLabel
-            // 
-            valorLabel.AutoSize = true;
-            valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorLabel.Location = new System.Drawing.Point(259, 57);
-            valorLabel.Name = "valorLabel";
-            valorLabel.Size = new System.Drawing.Size(43, 16);
-            valorLabel.TabIndex = 6;
-            valorLabel.Text = "Valor:";
             // 
             // valorTextBox
             // 
@@ -204,28 +185,34 @@ namespace Sistema
             this.valorTextBox.Size = new System.Drawing.Size(100, 22);
             this.valorTextBox.TabIndex = 7;
             // 
-            // itensVendaDataGridView
+            // quantidadeTextBox
             // 
-            this.itensVendaDataGridView.AutoGenerateColumns = false;
-            this.itensVendaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itensVendaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.itensVendaDataGridView.DataSource = this.itensVendaBindingSource;
-            this.itensVendaDataGridView.Location = new System.Drawing.Point(11, 91);
-            this.itensVendaDataGridView.Name = "itensVendaDataGridView";
-            this.itensVendaDataGridView.Size = new System.Drawing.Size(591, 201);
-            this.itensVendaDataGridView.TabIndex = 8;
+            this.quantidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensVendaBindingSource, "Quantidade", true));
+            this.quantidadeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeTextBox.Location = new System.Drawing.Point(356, 19);
+            this.quantidadeTextBox.Name = "quantidadeTextBox";
+            this.quantidadeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.quantidadeTextBox.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn1
+            // codigoVendaTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Quantidade";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.codigoVendaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CodigoVenda", true));
+            this.codigoVendaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoVendaTextBox.Location = new System.Drawing.Point(125, 19);
+            this.codigoVendaTextBox.Name = "codigoVendaTextBox";
+            this.codigoVendaTextBox.Size = new System.Drawing.Size(121, 22);
+            this.codigoVendaTextBox.TabIndex = 1;
+            // 
+            // btn_sair
+            // 
+            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sair.Location = new System.Drawing.Point(439, 23);
+            this.btn_sair.Name = "btn_sair";
+            this.btn_sair.Size = new System.Drawing.Size(88, 23);
+            this.btn_sair.TabIndex = 5;
+            this.btn_sair.Text = "Sair";
+            this.btn_sair.UseVisualStyleBackColor = true;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -233,36 +220,65 @@ namespace Sistema
             this.dataGridViewTextBoxColumn2.HeaderText = "CodigoProduto";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CodigoVenda";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CodigoVenda";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Produto";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Produto";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 147;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Valor";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "valor";
             this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dataGridViewTextBoxColumn5
+            // Column1
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CodigoItem";
-            this.dataGridViewTextBoxColumn5.HeaderText = "CodigoItem";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.Column1.HeaderText = "Valor total";
+            this.Column1.Name = "Column1";
             // 
-            // dataGridViewTextBoxColumn6
+            // codigoProdutoLabel
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Venda";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Venda";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            codigoProdutoLabel.AutoSize = true;
+            codigoProdutoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codigoProdutoLabel.Location = new System.Drawing.Point(14, 57);
+            codigoProdutoLabel.Name = "codigoProdutoLabel";
+            codigoProdutoLabel.Size = new System.Drawing.Size(58, 16);
+            codigoProdutoLabel.TabIndex = 8;
+            codigoProdutoLabel.Text = "Produto:";
+            // 
+            // codigoProdutoComboBox
+            // 
+            this.codigoProdutoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.itensVendaBindingSource, "CodigoProduto", true));
+            this.codigoProdutoComboBox.DataSource = this.produtoBindingSource;
+            this.codigoProdutoComboBox.DisplayMember = "desc_produto";
+            this.codigoProdutoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.codigoProdutoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoProdutoComboBox.FormattingEnabled = true;
+            this.codigoProdutoComboBox.Location = new System.Drawing.Point(125, 51);
+            this.codigoProdutoComboBox.Name = "codigoProdutoComboBox";
+            this.codigoProdutoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.codigoProdutoComboBox.TabIndex = 9;
+            this.codigoProdutoComboBox.ValueMember = "id_produtos";
+            // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataSource = typeof(sistema_DAL.Produto);
             // 
             // frm_venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(615, 383);
+            this.ClientSize = new System.Drawing.Size(626, 388);
+            this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(codigoPessoaLabel);
@@ -275,8 +291,9 @@ namespace Sistema
             ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,16 +307,17 @@ namespace Sistema
         private System.Windows.Forms.BindingSource pessoasBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox codigoVendaTextBox;
-        private System.Windows.Forms.TextBox codigoProdutoTextBox;
         private System.Windows.Forms.BindingSource itensVendaBindingSource;
         private System.Windows.Forms.TextBox quantidadeTextBox;
         private System.Windows.Forms.TextBox valorTextBox;
+        private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.DataGridView itensVendaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.ComboBox codigoProdutoComboBox;
+        private System.Windows.Forms.BindingSource produtoBindingSource;
     }
 }

@@ -21,32 +21,19 @@
         <classShapeMoniker Id="f236eb59-0bcd-4227-8560-220b6773fae5" />
       </nodes>
     </associationConnector>
-    <classShape Id="c570b88a-ef0d-46d5-9f00-9c36804e584a" absoluteBounds="6, 0.5, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/sistemaDataContext/ItensVenda" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ea7c6384-4235-47e0-a9f2-96633afe0f45" absoluteBounds="6.015, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9e666166-d32a-4af0-9848-78de29a19c53" absoluteBounds="3.25, 2.125, 2, 1.7708968098958331">
+    <classShape Id="9e666166-d32a-4af0-9848-78de29a19c53" absoluteBounds="5.875, 0.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/sistemaDataContext/Venda" />
       <nestedChildShapes>
-        <elementListCompartment Id="713acc27-0f20-4095-859f-d24512f668e2" absoluteBounds="3.2649999999999997, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="713acc27-0f20-4095-859f-d24512f668e2" absoluteBounds="5.89, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.25 : 2.95485899522569); (5.49 : 2.95485899522569); (5.49 : 2.06134611906829); (6 : 2.06134611906829)]" fixedFrom="Caller" fixedTo="Caller">
-      <AssociationMoniker Name="/sistemaDataContext/Venda/Venda_ItensVenda" />
-      <nodes>
-        <classShapeMoniker Id="9e666166-d32a-4af0-9848-78de29a19c53" />
-        <classShapeMoniker Id="c570b88a-ef0d-46d5-9f00-9c36804e584a" />
-      </nodes>
-    </associationConnector>
     <classShape Id="ae05c837-cf63-467d-92f5-ed143fa46a19" absoluteBounds="3, 0.5, 2, 1.1939925130208333">
       <DataClassMoniker Name="/sistemaDataContext/Pessoas" />
       <nestedChildShapes>
         <elementListCompartment Id="0377cbaa-1907-4fb1-9d2a-ab436c84f8f0" absoluteBounds="3.015, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3 : 1.31607059363163); (2.76 : 1.31607059363163); (2.76 : 3.68838868566826); (3.25 : 3.68838868566826)]" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(5 : 1.09699625651042); (5.875 : 1.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/sistemaDataContext/Pessoas/Pessoas_Venda" />
       <nodes>
         <classShapeMoniker Id="ae05c837-cf63-467d-92f5-ed143fa46a19" />
@@ -59,5 +46,25 @@
         <elementListCompartment Id="8a893ebc-814c-4264-81f5-ce9166f0b263" absoluteBounds="5.765, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="15f9b8a6-bc35-40cc-bd94-916aed3336b1" absoluteBounds="3.25, 2.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/sistemaDataContext/ItensVenda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9822610e-795d-46ef-b3e8-56d0368b3e28" absoluteBounds="3.265, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 1.71519853320312); (5.5 : 1.71519853320312); (5.5 : 2.375); (4.40398592720972 : 2.375); (4.40398592720972 : 2.75)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/sistemaDataContext/Venda/Venda_tb_itens_venda" />
+      <nodes>
+        <classShapeMoniker Id="9e666166-d32a-4af0-9848-78de29a19c53" />
+        <classShapeMoniker Id="15f9b8a6-bc35-40cc-bd94-916aed3336b1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.28929768880208); (3.25 : 3.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sistemaDataContext/Produto/Produto_tb_itens_venda" />
+      <nodes>
+        <classShapeMoniker Id="f236eb59-0bcd-4227-8560-220b6773fae5" />
+        <classShapeMoniker Id="15f9b8a6-bc35-40cc-bd94-916aed3336b1" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -21,6 +21,13 @@ namespace Sistema
         private void frm_venda_Load(object sender, EventArgs e)
         {
             this.pessoasBindingSource.DataSource = DataContextFactory.DataContext.Pessoas;
+            this.itensVendaBindingSource.DataSource = DataContextFactory.DataContext.ItensVenda;
+            this.produtoBindingSource.DataSource = DataContextFactory.DataContext.Produto;
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();// Fecha o formulário Menu
         }
     }
 }
