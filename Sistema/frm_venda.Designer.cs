@@ -35,8 +35,8 @@ namespace Sistema
             System.Windows.Forms.Label quantidadeLabel;
             System.Windows.Forms.Label valorLabel;
             System.Windows.Forms.Label codigoProdutoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CB_cliente = new System.Windows.Forms.ComboBox();
             this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,16 +46,16 @@ namespace Sistema
             this.codigoProdutoComboBox = new System.Windows.Forms.ComboBox();
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itensVendaDataGridView = new System.Windows.Forms.DataGridView();
-            this.valorTextBox = new System.Windows.Forms.TextBox();
-            this.quantidadeTextBox = new System.Windows.Forms.TextBox();
-            this.codigoVendaTextBox = new System.Windows.Forms.TextBox();
-            this.btn_sair = new System.Windows.Forms.Button();
+            this.DG_vendas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.quantidadeTextBox = new System.Windows.Forms.TextBox();
+            this.codigoVendaTextBox = new System.Windows.Forms.TextBox();
+            this.btn_sair = new System.Windows.Forms.Button();
             codigoPessoaLabel = new System.Windows.Forms.Label();
             codigoVendaLabel = new System.Windows.Forms.Label();
             quantidadeLabel = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace Sistema
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_vendas)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoPessoaLabel
@@ -157,7 +157,7 @@ namespace Sistema
             this.groupBox1.Controls.Add(this.btn_novoItem);
             this.groupBox1.Controls.Add(codigoProdutoLabel);
             this.groupBox1.Controls.Add(this.codigoProdutoComboBox);
-            this.groupBox1.Controls.Add(this.itensVendaDataGridView);
+            this.groupBox1.Controls.Add(this.DG_vendas);
             this.groupBox1.Controls.Add(valorLabel);
             this.groupBox1.Controls.Add(this.valorTextBox);
             this.groupBox1.Controls.Add(quantidadeLabel);
@@ -182,6 +182,7 @@ namespace Sistema
             this.btn_novoItem.TabIndex = 10;
             this.btn_novoItem.Text = "Novo Item";
             this.btn_novoItem.UseVisualStyleBackColor = true;
+            this.btn_novoItem.Click += new System.EventHandler(this.btn_novoItem_Click);
             // 
             // codigoProdutoComboBox
             // 
@@ -205,21 +206,58 @@ namespace Sistema
             // 
             this.produtoBindingSource.DataSource = typeof(sistema_DAL.Produto);
             // 
-            // itensVendaDataGridView
+            // DG_vendas
             // 
-            this.itensVendaDataGridView.AutoGenerateColumns = false;
-            this.itensVendaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itensVendaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DG_vendas.AutoGenerateColumns = false;
+            this.DG_vendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DG_vendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn4,
             this.Column1});
-            this.itensVendaDataGridView.DataSource = this.itensVendaBindingSource;
-            this.itensVendaDataGridView.Location = new System.Drawing.Point(11, 95);
-            this.itensVendaDataGridView.Name = "itensVendaDataGridView";
-            this.itensVendaDataGridView.Size = new System.Drawing.Size(598, 217);
-            this.itensVendaDataGridView.TabIndex = 8;
+            this.DG_vendas.DataSource = this.itensVendaBindingSource;
+            this.DG_vendas.Location = new System.Drawing.Point(11, 95);
+            this.DG_vendas.Name = "DG_vendas";
+            this.DG_vendas.Size = new System.Drawing.Size(598, 217);
+            this.DG_vendas.TabIndex = 8;
+            this.DG_vendas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DG_vendas_CellFormatting);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoProduto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CodigoProduto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Produto";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Produto";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 153;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "valor";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column1.HeaderText = "Valor total";
+            this.Column1.Name = "Column1";
             // 
             // valorTextBox
             // 
@@ -261,42 +299,6 @@ namespace Sistema
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoProduto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CodigoProduto";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Produto";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Produto";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 153;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Quantidade";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "valor";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column1.HeaderText = "Valor total";
-            this.Column1.Name = "Column1";
-            // 
             // frm_venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,7 +320,7 @@ namespace Sistema
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_vendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +338,7 @@ namespace Sistema
         private System.Windows.Forms.TextBox quantidadeTextBox;
         private System.Windows.Forms.TextBox valorTextBox;
         private System.Windows.Forms.Button btn_sair;
-        private System.Windows.Forms.DataGridView itensVendaDataGridView;
+        private System.Windows.Forms.DataGridView DG_vendas;
         private System.Windows.Forms.ComboBox codigoProdutoComboBox;
         private System.Windows.Forms.BindingSource produtoBindingSource;
         private System.Windows.Forms.Button btn_novoItem;

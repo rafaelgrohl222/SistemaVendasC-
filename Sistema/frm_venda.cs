@@ -21,7 +21,7 @@ namespace Sistema
         private void frm_venda_Load(object sender, EventArgs e)
         {
             this.pessoasBindingSource.DataSource = DataContextFactory.DataContext.Pessoas;
-            this.itensVendaBindingSource.DataSource = DataContextFactory.DataContext.ItensVenda;
+            this.vendaBindingSource.DataSource = DataContextFactory.DataContext.Venda;
             this.produtoBindingSource.DataSource = DataContextFactory.DataContext.Produto;
 
             this.vendaBindingSource.AddNew();
@@ -68,6 +68,23 @@ namespace Sistema
             this.itensVendaBindingSource.AddNew();//Entrar com um valor
             this.ItensCorrente.CodigoVenda = this.vendaCorrente.CodigoVenda;//Verificar se é igual a venda atual
             this.ItensCorrente.Quantidade = 1;//Quando registrar novo item, incluir um linha
+
+        }
+
+        private void btn_novoItem_Click(object sender, EventArgs e)
+        {
+            this.itensVendaBindingSource.EndEdit();//Sair modo edição
+            DG_vendas.Refresh();//Atualizar o gridView BD
+            DataContextFactory.DataContext.SubmitChanges();//Mandar dados BD
+            NovoItem();//Criar novo item
+        }
+
+        private void DG_vendas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value != null && e.ColumnIndex == 1)
+            {
+                e.Value = ((Produto).e.Value).desc_produto;
+            }
         }
     }
 }
